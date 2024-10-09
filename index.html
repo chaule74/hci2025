@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website-Human-Computer Interaction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003366;
+            color: #fff;
+            padding: 10px;
+        }
+
+        header .logo h1 {
+            margin-left: 50px;
+            font-size: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 50px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            margin: -70px;
+            margin-right: 60px;
+        }
+
+        nav ul li a.active {
+            color: #00bfff;
+            border-bottom: 2px solid #00bfff;
+        }
+
+
+        nav ul li a:hover {
+            color: #00bfff;
+        }
+
+        section {
+            padding: 0px 20px;
+            text-align: left;
+        }
+
+        footer {
+            background-color: #003366;
+            color: #fff;
+            padding: 0px 20px;
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 2000px;
+        }
+
+        .footer-group-info,
+        .footer-newsletter {
+            flex: 5;
+            margin: 50px 150px;
+        }
+        
+        .footer-newsletter form {
+            display: flex;
+            align-items: center;
+            max-width: 100%;
+        }
+
+        .footer-newsletter input[type="email"] {
+            padding: 10px;
+            border-radius: 20px 0 0 20px;
+            border: none;
+            width: 100%;
+            outline: none;
+        }
+
+        .footer-newsletter button {
+            padding: 10px 30px;
+            background-color: #003366;
+            color: white;
+            border-radius: 0 20px 20px 0;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .footer-newsletter button:hover {
+            color: #00bfff;
+        }
+
+        .labs-nav {
+            display: flex;
+            justify-content: left;
+            gap: 20px;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .labs-nav ul {
+            list-style: none;
+        }
+
+        .labs-nav ul li a {
+            color: #003366;
+            text-decoration: none;
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #f4f4f4;
+            border: 2px solid #003366;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .labs-nav ul li a:hover {
+            background-color: #003366;
+            color: white;
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: left;
+            margin-bottom: 20px;
+        }
+
+        .tab-link {
+            background-color: #f1f1f1;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .tab-link:hover {
+            background-color: #ddd;
+        }
+
+        .tab-link.active {
+            background-color: #003366;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .tab-content.active {
+            display: block;
+            margin-top: -20px;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        form {
+            max-width: 700px;
+            width: 100%;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group select,
+        .form-group input[type="url"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group img {
+            max-width: 100px;
+            max-height: 100px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .form-group .readonly {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-group input[type="submit"],
+        .form-group input[type="button"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover,
+        .form-group input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        .cv-container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .cv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #003366;
+        }
+
+        .cv-header .name-title h1 {
+            font-size: 40px;
+            color: #003366;
+        }
+
+        .cv-main-content {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .cv-sidebar {
+            padding-right: 20px;
+            border-right: 2px solid #003366;
+        }
+
+        .cv-main {
+            flex: 2;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>CHAULE</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showPage('home', this)" class="active">Home</a></li>
+                <li><a href="#" onclick="showPage('about', this)">About</a></li>
+                <li><a href="#" onclick="showPage('labs', this)">Labs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Home</h2>
+        <p>Welcome to the Human-Computer Interaction project site of ChauLe!</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" style="display: none;">
+        <div class="cv-container">
+            <div class="cv-header">
+                <div class="name-title">
+                    <h1>Chau Le</h1>
+                    <p>Front-end Engineer</p>
+                </div>
+            </div>
+            <div class="cv-main-content">
+                <div class="cv-sidebar">
+                    <h2>Contact Info</h2>
+                    <p>Email: chaule@gmail.com</p>
+                    <p>Phone: 0123456789</p>
+                    <h2>Skills</h2>
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+                <div class="cv-main">
+                    <h2>Education</h2>
+                    <p>Studying Information Technology, Nông Lâm University</p>
+                    <h2>Work Experience</h2>
+                    <p>Not yet</p>
+                </div>
+            </div>
+    </section>
+
+    <!-- Labs Section -->
+    <section id="labs" style="display: none;">
+        <h2>Labs</h2>
+
+        <!-- Tab Navigation -->
+        <div class="tab-container">
+            <button class="tab-link active" onclick="openLab(event, 'lab1')">Lab 1</button>
+            <button class="tab-link" onclick="openLab(event, 'lab2')">Lab 2</button>
+            <button class="tab-link" onclick="openLab(event, 'lab3')">Lab 3</button>
+        </div>
+
+        <!-- Tab Content -->
+        <section id="lab1" class="tab-content active">
+            <div class="form-container">
+                <form action="" method="post">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullname">Full Name (optional):</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role:</label>
+                        <select id="role" name="role" required>
+                            <option value="">--Select Role--</option>
+                            <option value="admin">Admin</option>
+                            <option value="user">User</option>
+                        </select>
+                    </div>
+
+                    <!-- Profile Picture -->
+                    <div class="form-group">
+                        <label for="profile-picture">Profile Picture (URL):</label>
+                        <input type="url" id="profile-picture" name="profile-picture" placeholder="Enter profile picture URL">
+                        <img id="profile-preview" src="" alt="Profile Picture Preview" style="display:none;">
+                    </div>
+
+                    <!-- Account Created At -->
+                    <div class="form-group">
+                        <label>Account Created At:</label>
+                        <div class="readonly" id="created-at">01/01/2024 12:00 PM</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Updated At:</label>
+                        <div class="readonly" id="updated-at">Not updated yet</div> <!-- Mặc định để trống hoặc hiển thị "Not updated yet" -->
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create Account">
+                        <input type="button" value="Cancel" onclick="resetForm()">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="lab2" class="tab-content" style="display: none;">
+            <h3>Lab 2: Nội dung Lab 2</h3>
+            <p>Đây là nội dung của Lab 2.</p>
+        </section>
+
+        <section id="lab3" class="tab-content" style="display: none;">
+            <h3>Lab 3: Nội dung Lab 3</h3>
+            <p>Đây là nội dung của Lab 3.</p>
+        </section>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-group-info">
+                <h3>Website Information</h3>
+                <p>This project is developed by ChauLe of the Human-Computer Interaction course.</p>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h3>Newsletter</h3>
+                <form action="">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId, element) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            document.getElementById(pageId).style.display = 'block';
+
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+
+            element.classList.add('active');
+
+            if (pageId === 'labs') {
+                document.querySelector(".tab-link").click();
+            }
+        }
+        
+        function openLab(evt, labName) {
+            var i, tabcontent, tablinks;
+    
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+    
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+    
+            document.getElementById(labName).style.display = "block";
+            document.getElementById(labName).classList.add("active");
+            evt.currentTarget.className += " active";
+        }
+    
+        function resetForm() {
+            document.querySelector("form").reset();
+            document.getElementById("profile-preview").style.display = "none";
+        }
+        
+        document.getElementById("profile-picture").addEventListener("input", function() {
+            var url = this.value;
+            if (url) {
+                document.getElementById("profile-preview").src = url;
+                document.getElementById("profile-preview").style.display = "block";
+            } else {
+                document.getElementById("profile-preview").style.display = "none";
+            }
+        });
+    </script>    
+</body>
+</html>
