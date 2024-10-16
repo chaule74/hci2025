@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Sharing Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Document Sharing Platform</h1>
+      </header>
+  
+      <!-- Subject Selection Section -->
+      <div class="subject-selection" id="subject-selection">
+        <div class="subject-card">
+          <h2>Toán cao cấp</h2>
+          <p>Explore all the Toán cao cấp resources.</p>
+          <a href="#" onclick="showDocumentPage('Toán cao cấp')">View</a>
+        </div>
+        <div class="subject-card">
+          <h2>Nhập môn tin học</h2>
+          <p>Explore all the Nhập môn tin học resources.</p>
+          <a href="#" onclick="showDocumentPage('Nhập môn tin học')">View</a>
+        </div>
+        <div class="subject-card">
+          <h2>Java</h2>
+          <p>Explore all the Java resources.</p>
+          <a href="#" onclick="showDocumentPage('Java')">View</a>
+        </div>
+        <div class="subject-card">
+          <h2>Linux</h2>
+          <p>Explore all the Linux resources.</p>
+          <a href="#" onclick="showDocumentPage('Linux')">View</a>
+        </div>
+        <div class="subject-card">
+          <h2>Cấu trúc máy tính</h2>
+          <p>Explore all the Cấu trúc máy tính resources.</p>
+          <a href="#" onclick="showDocumentPage('Cấu trúc máy tính')">View</a>
+        </div>
+        <div class="subject-card">
+          <h2>Cấu trúc dữ liệu</h2>
+          <p>Explore all the Cấu trúc dữ liệu resources.</p>
+          <a href="#" onclick="showDocumentPage('Cấu trúc dữ liệu')">View</a>
+        </div>
+        <div class="subject-card">
+          <h2>Toán rời rạc</h2>
+          <p>Explore all the Toán rời rạc resources.</p>
+          <a href="#" onclick="showDocumentPage('Toán rời rạc')">View</a>
+        </div>
+        <div class="subject-card">
+          <h2>Mạng máy tính</h2>
+          <p>Explore all the Mạng máy tính resources.</p>
+          <a href="#" onclick="showDocumentPage('Mạng máy tính')">View</a>
+        </div>
+      </div>
+  
+      <!-- Document Page Section -->
+      <div class="document-container" id="document-container">
+        <div class="sidebar" id="sidebar">
+          <h2 id="sidebar-title">Contents</h2>
+          <details id="curriculum-section">
+            <summary>Curriculum</summary>
+            <ul class="chapter-list">
+              <li>
+                <a href="#" onclick="loadChapterPDF('pdfs/math_curriculum_chapter1.pdf', 'Chapter 1')">1. Chapter 1</a>
+              </li>
+              <li>
+                <a href="#" onclick="loadChapterPDF('pdfs/math_curriculum_chapter2.pdf', 'Chapter 2')">2. Chapter 2</a>
+              </li>
+              <li>
+                <a href="#" onclick="loadChapterPDF('pdfs/math_curriculum_chapter3.pdf', 'Chapter 3')">3. Chapter 3</a>
+              </li>
+            </ul>
+          </details>
+          <details id="exercise-section">
+            <summary>Exercises</summary>
+            <ul class="chapter-list">
+              <li>
+                <a href="#" onclick="loadChapterPDF('pdfs/math_exercise_chapter1.pdf', 'Exercise 1')">1. Exercise 1</a>
+              </li>
+              <li>
+                <a href="#" onclick="loadChapterPDF('pdfs/math_exercise_chapter2.pdf', 'Exercise 2')">2. Exercise 2</a>
+              </li>
+              <li>
+                <a href="#" onclick="loadChapterPDF('pdfs/math_exercise_chapter3.pdf', 'Exercise 3')">3. Exercise 3</a>
+              </li>
+            </ul>
+          </details>
+          <a href="#" class="references-link" style="text-decoration: none; color: #000000;" onclick="showReferences()">References</a>
+          <div class="back-button-container">
+            <a href="#" class="back-button" onclick="goBack()">Back to Subjects</a>
+        </div>
+        </div>
+        <div class="content" id="content">
+          <h1 id="content-title" style="font-size: 25px">Select a Document</h1>
+          <p id="content-text" style="margin-top: -15px; font-size: 25px;">Choose a category to see the content here.</p>
+  
+          <!-- PDF Viewer Section -->
+          <iframe id="pdf-viewer" src="" width="100%" height="600px"></iframe>
+        </div>
+      </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

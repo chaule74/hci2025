@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Sharing Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Login Form -->
+    <div id="login-containe" class="login-container">
+      <form action="">
+          <h2 class="heading">Login to your account</h2>
+              <div class="group-input">
+                  <input type="text"name="username" placeholder="Username" required>
+              </div>
+              <div class="group-input">
+                  <input type="password"name="password" placeholder="Password" required>
+              </div>
+              <div class="remember-forgot">
+                  <label><input type="checkbox">Remember me</label>
+                  <a href="#">Forgot Password?</a>
+              </div>
+              <div class="group-input">
+                  <input type="submit" class="login-btn" name="login" value="Login" onclick="showDashboard(event)">
+              </div>
+              <div class="register-link">
+                  <p>Don't have an account?<a href="#"> Register</a></p>
+              </div>
+          </div>
+      </form>
+          <!-- Dashboard -->
+          <div class="dashboard-container" id="dashboard-container" style="display:none;">
+              <div class="exercise-list">
+                  <h2 class="all-exercise-title">Available Exercises</h2>
+                  <div class="exercise-scroll">
+                      <div class="exercise-card" data-language="C" onclick="selectExercise('C Exercise 1')">
+                          <div class="exercise-title">C Exercise 1</div>
+                          <div class="exercise-description">Calculate the sum of two numbers.</div>
+                          <div>Difficulty: Easy</div>
+                      </div>
+                      <div class="exercise-card" data-language="C" onclick="selectExercise('C Exercise 2')">
+                          <div class="exercise-title">C Exercise 2</div>
+                          <div class="exercise-description">Divide two numbers.</div>
+                          <div>Difficulty: Medium</div>
+                      </div>
+                      <div class="exercise-card" data-language="Python" onclick="selectExercise('Python Exercise 1')">
+                          <div class="exercise-title">Python Exercise 1</div>
+                          <div class="exercise-description">Calculate the sum of two numbers.</div>
+                          <div>Difficulty: Medium</div>
+                      </div>
+                      <div class="exercise-card" data-language="Python" onclick="selectExercise('Python Exercise 2')">
+                          <div class="exercise-title">Python Exercise 2</div>
+                          <div class="exercise-description">Calculate the average of two numbers.</div>
+                          <div>Difficulty: Hard</div>
+                      </div>
+                      <div class="exercise-card" data-language="Java" onclick="selectExercise('Java Exercise 1')">
+                          <div class="exercise-title">Java Exercise 1</div>
+                          <div class="exercise-description">Calculate the sum of two numbers.</div>
+                          <div>Difficulty: Hard</div>
+                      </div>
+                      <div class="exercise-card" data-language="Java" onclick="selectExercise('Java Exercise 2')">
+                          <div class="exercise-title">Java Exercise 2</div>
+                          <div class="exercise-description">Calculate the product of two numbers.</div>
+                          <div>Difficulty: Very Hard</div>
+                      </div>
+                  </div>
+                  <button class="logout-btn" onclick="logout()">Logout</button>
+              </div>
+              <div class="exercise-content">
+                  <h1 id="exercise-title" style="margin-bottom: 10px;">Exercise Title</h1>
+                  <div class="editor" contenteditable="true" id="editor"></div>
+                  <div class="test-case-container">
+                      <h3>Create Your Test Case</h3>
+                      <input type="number" id="test-input-1" class="test-case-input" placeholder="Input 1">
+                      <input type="number" id="test-input-2" class="test-case-input" placeholder="Input 2">
+                      <input type="number" id="expected-output" class="test-case-input" placeholder="Expected Output">
+                      <div class="controls">
+                          <button class="control-btn" onclick="runTestCase()">Run</button>
+                          <button class="control-btn" onclick="submitTestCase()">Submit</button>
+                      </div>
+                      <div class="test-case-results" id="test-case-results" style="display:none;"></div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Result Page -->
+          <div class="result-container" id="result-container">
+              <h2 class="result-title">Submission Result</h2>
+              <div id="result-details"></div>
+              <button class="control-btn" onclick="goBackToDashboard()">Back to Dashboard</button>
+          </div>
+
+  <!-- Result Page -->
+  <div class="result-container" id="result-container">
+      <h2 class="result-title">Submission Result</h2>
+      <div id="result-details"></div>
+      <button class="control-btn" onclick="goBackToDashboard()">Back to Dashboard</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

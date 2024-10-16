@@ -16,30 +16,49 @@
             line-height: 1.6;
             background-color: #f4f4f4;
         }
-
+        
         .home-section {
-            background: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-electronic-technology-website-texture-background-banner-image_156039.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 65vh;
-            padding: 185px 20px;
-            text-align: center; 
-            color: white;
+            display: flex;
+            align-items: center;
+            background-color: #37517e;
+            color: #f4f4f4;
+            justify-content: space-between;
+            padding: 60px;
+            height: auto;
         }
 
-        .home-section h2 {
-            font-size: 40px;
+        .text-content {
+            max-width: 50%;
         }
-
-        .home-section p {
+        .text-content h1 {
+            font-size: 60px;
+            margin: 0;
+        }
+        .text-content p {
             font-size: 20px;
+            color: #b0c4de;
+        }
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+            animation: up-down 2s ease-in-out infinite alternate-reverse both;
+        }
+
+        @keyframes up-down {
+        0% {
+            transform: translateY(10px);
+        }
+
+        100% {
+            transform: translateY(-10px);
+        }
         }
 
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #003366;
+            background-color: #37517e;
             color: #fff;
             padding: 10px;
         }
@@ -79,11 +98,10 @@
             padding: 0px 20px;
             text-align: left;
         }
-
+        
         footer {
-            background-color: #003366;
+            background-color: #37517e;
             color: #fff;
-            padding: 0px 20px;
             text-align: center;
             margin-top: 0px;
         }
@@ -91,8 +109,7 @@
         .footer-container {
             display: flex;
             justify-content: space-around;
-            width: 100%;
-            max-width: 2000px;
+            margin: auto;
         }
 
         .footer-group-info,
@@ -117,7 +134,7 @@
 
         .footer-newsletter button {
             padding: 10px 30px;
-            background-color: #003366;
+            background-color: #37517e;
             color: white;
             border-radius: 0 20px 20px 0;
             border: none;
@@ -180,7 +197,7 @@
         }
 
         .tab-link.active {
-            background-color: #003366;
+            background-color: #37517e;
             color: white;
         }
 
@@ -196,224 +213,6 @@
         .tab-content.active {
             display: block;
             margin-top: -20px;
-        }
-
-        #login-container {
-            font-family: 'Arial', sans-serif;
-            background: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-        }
-
-        .login-container {
-            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 15, 121, 1) 53%, rgba(0, 212, 255, 1) 100%);
-            color: #FFFFFF;
-            border-radius: 10px;
-            box-shadow: 0 14px 28px rgba(47, 0, 255, 0.25), 0 10px 10px rgba(47, 0, 255, 0.25);
-            position: relative;
-            overflow: hidden;
-            max-width: 500px;
-            width: 100%;
-            height: 310px;
-            margin: auto;
-        }
-
-        .heading {
-            font-weight: bold;
-            text-align: center;
-            margin: 30px 0 10px 0;
-        }
-
-        .login-form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            width: 100%;
-        }
-
-        .group-input {
-            margin: 10px 0;
-        }
-
-        .form-input {
-            padding: 12px 15px;
-            border-radius: 20px;
-            background-color: #eee;
-            width: 300px;
-            border: none;
-        }
-
-        .forgot {
-            text-decoration: none;
-            color: #ffffff;
-        }
-
-        .forgot:hover {
-            color: #007bff;
-        }
-
-        .login-btn {
-            background: transparent;
-            color: #ffffff;
-            border: 1px solid #eee;
-            border-radius: 20px;
-            padding: 12px 45px;
-        }
-
-        .login-btn:hover {
-            background-color: #0056b3;
-        }
-
-        .dashboard-container {
-            display: flex;
-            width: 100%;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .all-exercise-title {
-            text-align: center;
-            margin-top: 14px;
-        }
-
-        .exercise-list {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .exercise-scroll {
-            max-height: 500px;
-            overflow-y: auto;
-            padding: 0px 20px;
-            margin-bottom: 6px;
-            margin-right: -45px;
-        }
-
-        .exercise-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 10px;
-            margin: 10px 0;
-            transition: box-shadow 0.3s;
-            background: #fff;
-            cursor: pointer;
-        }
-
-        .exercise-card:hover {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            background: #f1f1f1;
-        }
-
-        .exercise-title {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .exercise-description {
-            color: #666;
-            margin: 5px 0;
-        }
-
-        .exercise-content {
-            width: 70%;
-            padding: 20px;
-            margin-left: 60px;
-        }
-
-        .editor {
-            width: 100%;
-            height: 300px;
-            background: #222;
-            color: white;
-            border-radius: 5px;
-            padding: 10px;
-            font-family: monospace;
-            overflow: auto;
-        }
-
-        .controls {
-            margin-top: 10px;
-            display: flex;
-            justify-content: flex-start;
-            gap: 20px;
-        }
-
-        .control-btn {
-            padding: 10px 20px;
-            background-color: #003366;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 20%;
-        }
-
-        .control-btn:hover {
-            background-color: #0056b3;
-        }
-
-        .logout-btn {
-            padding: 10px 20px;
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-            margin-left: 20px;
-        }
-
-        .logout-btn:hover {
-            background-color: #c00013;
-        }
-
-        .result-container {
-            display: none;
-            padding: 154px;
-            text-align: center;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .result-title {
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        .filter {
-            margin-bottom: 20px;
-        }
-
-        .test-case-container {
-            margin-top: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            background: #f9f9f9;
-        }
-
-        .test-case-input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            margin-bottom: 10px;
-        }
-
-        .test-case-results {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            background: #e2e3e5;
         }
 
         .form-container {
@@ -534,8 +333,13 @@
 
     <!-- Home Section -->
     <section id="home" class="home-section">
-        <h2>Home</h2>
+        <div class="text-content">
+        <h1>Home</h1>
         <p>Welcome to the Human-Computer Interaction project site of ChauLe!</p>
+    </div>
+    <div class="image-content">
+        <img alt="Illustration of people working with technology, including a laptop, smartphone, and servers" height="400" src="hero-img.png" width="600"/>
+    </div>
     </section>
 
     <!-- About Section -->
@@ -631,91 +435,11 @@
         </section>
 
         <section id="lab2" class="tab-content" style="display: none;">
-            <!-- Login Form -->
-            <div id="login-containe" class="login-container">
-                <h2 class="heading">Login to your account</h2>
-                <form action="" method="post" class="login-form">
-                    <div class="group-input">
-                        <input type="text" class="form-input" name="username" placeholder="Username" required>
-                    </div>
-                    <div class="group-input">
-                        <input type="password" class="form-input" name="password" placeholder="Password" required>
-                    </div>
-                    <div class="group-input">
-                        <a href="#" class="forgot">Forgot Password?</a>
-                    </div>
-                    <div class="group-input">
-                        <input type="submit" class="login-btn" name="login" value="Login" onclick="showDashboard(event)">
-                    </div>
-                </form>
-            </div>
-
-            <!-- Dashboard -->
-            <div class="dashboard-container" id="dashboard-container" style="display:none;">
-                <div class="exercise-list">
-                    <h2 class="all-exercise-title">Available Exercises</h2>
-                    <div class="exercise-scroll">
-                        <div class="exercise-card" data-language="C" onclick="selectExercise('C Exercise 1')">
-                            <div class="exercise-title">C Exercise 1</div>
-                            <div class="exercise-description">Calculate the sum of two numbers.</div>
-                            <div>Difficulty: Easy</div>
-                        </div>
-                        <div class="exercise-card" data-language="C" onclick="selectExercise('C Exercise 2')">
-                            <div class="exercise-title">C Exercise 2</div>
-                            <div class="exercise-description">Divide two numbers.</div>
-                            <div>Difficulty: Medium</div>
-                        </div>
-                        <div class="exercise-card" data-language="Python" onclick="selectExercise('Python Exercise 1')">
-                            <div class="exercise-title">Python Exercise 1</div>
-                            <div class="exercise-description">Calculate the sum of two numbers.</div>
-                            <div>Difficulty: Medium</div>
-                        </div>
-                        <div class="exercise-card" data-language="Python" onclick="selectExercise('Python Exercise 2')">
-                            <div class="exercise-title">Python Exercise 2</div>
-                            <div class="exercise-description">Calculate the average of two numbers.</div>
-                            <div>Difficulty: Hard</div>
-                        </div>
-                        <div class="exercise-card" data-language="Java" onclick="selectExercise('Java Exercise 1')">
-                            <div class="exercise-title">Java Exercise 1</div>
-                            <div class="exercise-description">Calculate the sum of two numbers.</div>
-                            <div>Difficulty: Hard</div>
-                        </div>
-                        <div class="exercise-card" data-language="Java" onclick="selectExercise('Java Exercise 2')">
-                            <div class="exercise-title">Java Exercise 2</div>
-                            <div class="exercise-description">Calculate the product of two numbers.</div>
-                            <div>Difficulty: Very Hard</div>
-                        </div>
-                    </div>
-                    <button class="logout-btn" onclick="logout()">Logout</button>
-                </div>
-                <div class="exercise-content">
-                    <h1 id="exercise-title">Exercise Title</h1>
-                    <div class="editor" contenteditable="true" id="editor"></div>
-                    <div class="test-case-container">
-                        <h3>Create Your Test Case</h3>
-                        <input type="number" id="test-input-1" class="test-case-input" placeholder="Input 1">
-                        <input type="number" id="test-input-2" class="test-case-input" placeholder="Input 2">
-                        <input type="number" id="expected-output" class="test-case-input" placeholder="Expected Output">
-                        <div class="controls">
-                            <button class="control-btn" onclick="runTestCase()">Run</button>
-                            <button class="control-btn" onclick="submitTestCase()">Submit</button>
-                        </div>
-                        <div class="test-case-results" id="test-case-results" style="display:none;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Result Page -->
-            <div class="result-container" id="result-container">
-                <h2 class="result-title">Submission Result</h2>
-                <div id="result-details"></div>
-                <button class="control-btn" onclick="goBackToDashboard()">Back to Dashboard</button>
-            </div>
+            <iframe src="lab2" style="width: 100%; height: 700px; margin-top: -45px;" frameborder="0"></iframe>
         </section>
 
         <section id="lab3" class="tab-content" style="display: none;">
-            <h3>Lab 3: Nội dung Lab 3</h3>
-            <p>Đây là nội dung của Lab 3.</p>
+            <iframe src="lab3" style="width: 100%; height: 800px;" frameborder="0"></iframe>
         </section>
 
         <section id="lab4" class="tab-content" style="display: none;">
@@ -753,7 +477,11 @@
                 section.style.display = 'none';
             });
 
-            document.getElementById(pageId).style.display = 'block';
+            if (pageId === 'home') {
+                document.getElementById(pageId).style.display = 'flex';
+            } else {
+                document.getElementById(pageId).style.display = 'block';
+            }
 
             const navLinks = document.querySelectorAll('nav ul li a');
             navLinks.forEach(navLink => {
@@ -800,136 +528,6 @@
                 document.getElementById("profile-preview").style.display = "none";
             }
         });
-
-        //Lab2
-        function showDashboard(event) {
-            event.preventDefault();
-            document.getElementById('login-containe').style.display = 'none';
-            document.getElementById('dashboard-container').style.display = 'flex';
-        }
-
-        function selectExercise(language) {
-            document.getElementById('exercise-title').innerText = language;
-
-            // Mã code cho từng ngôn ngữ
-            const codeMap = {
-                "C Exercise 1": `
-#include <stdio.h>
-int main() {
-    int a, b;
-    printf("Enter two numbers: ");
-    scanf("%d %d", &a, &b);
-    printf("Sum is: %d\\n", a + b);
-    return 0;
-}
-`,
-                "Python Exercise 1": `
-a = int(input("Enter first number: "))
-b = int(input("Enter second number: "))
-print("Sum is:", a + b)
-`,
-                "Java Exercise 1": `
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter first number: ");
-        int a = scanner.nextInt();
-        System.out.print("Enter second number: ");
-        int b = scanner.nextInt();
-        System.out.println("Sum is: " + (a + b));
-    }
-}
-`,
-                "C Exercise 2": `
-#include <stdio.h>
-int main() {
-    int a, b;
-    printf("Enter two numbers: ");
-    scanf("%d %d", &a, &b);
-    if (b != 0) {
-        printf("Division result is: %.2f\\n", (float)a / b);
-    } else {
-        printf("Cannot divide by zero!\\n");
-    }
-    return 0;
-}
-`,
-                "Python Exercise 2": `
-a = int(input("Enter first number: "))
-b = int(input("Enter second number: "))
-average = (a + b) / 2
-print("Average is:", average)
-`,
-                "Java Exercise 2": `
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter first number: ");
-        int a = scanner.nextInt();
-        System.out.print("Enter second number: ");
-        int b = scanner.nextInt();
-        System.out.println("Product is: " + (a * b));
-    }
-}
-`
-            };
-
-            document.getElementById('editor').innerText = codeMap[language];
-            document.getElementById('test-case-results').style.display = 'none';
-        }
-
-        function runTestCase() {
-            const input1 = parseInt(document.getElementById('test-input-1').value);
-            const input2 = parseInt(document.getElementById('test-input-2').value);
-            const expectedOutput = parseFloat(document.getElementById('expected-output').value);
-            if (isNaN(input1) || isNaN(input2) || isNaN(expectedOutput)) {
-                alert('Please enter valid numbers.');
-                return;
-            }
-
-            // Mô phỏng việc chạy mã và hiển thị kết quả
-            const actualOutput = input2 !== 0 ? (input1 / input2) : "Cannot divide by zero";
-
-            const resultDetails = `
-                <p><strong>Input 1:</strong> ${input1}</p>
-                <p><strong>Input 2:</strong> ${input2}</p>
-                <p><strong>Expected Output:</strong> ${expectedOutput}</p>
-                <p><strong>Actual Output:</strong> ${actualOutput}</p>
-                <p><strong>Status:</strong> ${expectedOutput === actualOutput ? 'Passed' : 'Failed'}</p>
-                <p><strong>Score:</strong> ${expectedOutput === actualOutput ? 10 : 0} points</p>
-            `;
-
-            // Chuyển đến trang kết quả
-            document.getElementById('result-container').style.display = 'block';
-            document.getElementById('result-details').innerHTML = resultDetails;
-            document.getElementById('dashboard-container').style.display = 'none';
-        }
-
-        function submitTestCase() {
-            const resultContainer = document.getElementById('result-container');
-            resultContainer.style.display = 'block';
-            document.getElementById('dashboard-container').style.display = 'none';
-
-            const exerciseTitle = document.getElementById('exercise-title').innerText;
-            document.getElementById('result-details').innerHTML = `<p>Exercise "${exerciseTitle}" has been completed and submitted!</p>`;
-        }
-
-        function goBackToDashboard() {
-            document.getElementById('result-container').style.display = 'none';
-            document.getElementById('dashboard-container').style.display = 'flex';
-            document.getElementById('test-case-results').style.display = 'none';
-        }
-
-        function logout() {
-            document.getElementById('login-containe').style.display = 'block';
-            document.getElementById('dashboard-container').style.display = 'none';
-            document.getElementById('result-container').style.display = 'none';
-        }
-
     </script>    
 </body>
 </html>
