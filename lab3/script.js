@@ -29,42 +29,42 @@ function showDocumentPage(subject) {
   const pdfFiles = {
   'Java': {
       curriculum: {
-          'Chapter 1': 'Java_Chapter1.pdf',
-          'Chapter 2': 'Java_Chapter2.pdf',
-          'Chapter 3': 'Java_Chapter3.pdf'
+          'Chapter 1': 'pdf/Java_Chapter1.pdf',
+          'Chapter 2': 'pdf/Java_Chapter2.pdf',
+          'Chapter 3': 'pdf/Java_Chapter3.pdf'
       },
       exercises: {
-          'Exercise 1': 'Java_Excercise1.pdf',
-          'Exercise 2': 'Java_Excercise2.pdf',
-          'Exercise 3': 'Java_Excercise3.pdf'
+          'Exercise 1': 'pdf/Java_Excercise1.pdf',
+          'Exercise 2': 'pdf/Java_Excercise2.pdf',
+          'Exercise 3': 'pdf/Java_Excercise3.pdf'
       },
-      references: 'Java_Reference.pdf'
+      references: 'pdf/Java_Reference.pdf'
   },
   'Discrete Mathematics': {
       curriculum: {
-          'Chapter 1': 'Trr_Chapter1.pdf',
-          'Chapter 2': 'Trr_Chapter2.pdf',
-          'Chapter 3': 'Trr_Chapter3.pdf'
+          'Chapter 1': 'pdf/Trr_Chapter1.pdf',
+          'Chapter 2': 'pdf/Trr_Chapter2.pdf',
+          'Chapter 3': 'pdf/Trr_Chapter3.pdf'
       },
       exercises: {
-          'Exercise 1': 'Trr_Exercise1.pdf',
-          'Exercise 2': 'Trr_Exercise2.pdf',
-          'Exercise 3': 'Trr_Exercise3.pdf'
+          'Exercise 1': 'pdf/Trr_Exercise1.pdf',
+          'Exercise 2': 'pdf/Trr_Exercise2.pdf',
+          'Exercise 3': 'pdf/Trr_Exercise3.pdf'
       },
-      references: 'Trr_Reference.pdf'
+      references: 'pdf/Trr_Reference.pdf'
   },
   'Human-computer interaction': {
       curriculum: {
-          'Chapter 1': 'Gtnm_Chapter1.pdf',
-          'Chapter 2': 'Gtnm_Chapter2.pdf',
-          'Chapter 3': 'Gtnm_Chapter3.pdf'
+          'Chapter 1': 'pdf/Gtnm_Chapter1.pdf',
+          'Chapter 2': 'pdf/Gtnm_Chapter2.pdf',
+          'Chapter 3': 'pdf/Gtnm_Chapter3.pdf'
       },
       exercises: {
-          'Exercise 1': 'Gtnm_Exercise1.pdf',
-          'Exercise 2': 'Gtnm_Exercise2.pdf',
-          'Exercise 3': 'Gtnm_Exercise3.pdf'
+          'Exercise 1': 'pdf/Gtnm_Exercise1.pdf',
+          'Exercise 2': 'pdf/Gtnm_Exercise2.pdf',
+          'Exercise 3': 'pdf/Gtnm_Exercise3.pdf'
       },
-      references: 'Gtnm_Reference.pdf'
+      references: 'pdf/Gtnm_Reference.pdf'
   },
 };
 
