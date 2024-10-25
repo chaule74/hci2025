@@ -1,0 +1,391 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  color: #333;
+}
+
+/* Tab Navigation */
+.tab-container {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  border: 1px solid #ccc;
+  flex-wrap: wrap;
+}
+
+.tab-link {
+  background-color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 10px;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  color: #333;
+}
+
+.tab-link:hover {
+  background-color: #ddd;
+}
+
+.tab-link.active {
+  color: #333;
+}
+
+.welcome-section {
+  background-color: #f8f8f8;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.welcome-message {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 1.5rem;
+}
+
+.welcome-message h2 {
+  font-size: 1.5rem;
+}
+
+.edit-profile {
+  color: #7628d5;
+  text-decoration: none;
+}
+
+.streak-section {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  flex-wrap: wrap
+}
+
+.streak-info {
+  flex: 1;
+  padding-right: 550px;
+}
+
+.info-icon {
+  display: inline-flex; 
+  width: 15px;
+  height: 15px;
+  border: 2px solid #464646;
+  border-radius: 50%;
+  text-align: center;
+  justify-content: center; 
+  align-items: center; 
+  font-weight: bold;
+  color: #464646;
+  font-size: 12px;
+  background-color: #fff;
+  cursor: pointer; 
+  margin-left: 30px;
+}
+
+.streak-time {
+  flex: 1;
+  padding-right: 90px;
+}
+
+.streak-progress {
+  flex: 1;
+  margin-left: 25px;
+  margin-top: 20px;
+}
+
+li::marker {
+  font-size: 20px;
+}
+
+li:first-child::marker {
+  color: orange;
+}
+li::marker {
+  color: #2bb283;
+}
+
+.see-activity {
+  color: #7628d5;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 1px;
+}
+
+.courses-section {
+  padding: 20px;
+}
+
+.courses-pick {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styling for the new tab menu */
+.learning-tabs {
+  display: flex;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.learning-tabs button {
+  background-color: transparent;
+  border: none;
+  padding: 10px 0px;
+  margin: 0px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  font-weight: bold;
+  color: #aaaaaa;
+  text-decoration: none;
+}
+
+.learning-tabs button.active {
+  font-weight: bold;
+}
+
+.tab-underline {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  margin-bottom: -20px;
+  position: relative;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.learning-tabs button.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+}
+
+.courses-container, .recommendations {
+  position: relative;
+  overflow: hidden;
+}
+.courses, .recommendations {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+.course-card {
+  display: flex;
+  border: 1px solid #ccc;
+  margin-right: 20px;
+  width: 465px;
+  height: 190px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.course-card img {
+  width: 150px;
+  height: auto;
+  border-right: 1px solid #ccc;
+}
+.course-content {
+  padding: 20px;
+  overflow: hidden; /* Giới hạn nội dung không vượt quá */
+  text-overflow: ellipsis; /* Thêm dấu '...' nếu vượt quá */
+  white-space: nowrap; /* Giữ văn bản trên cùng một dòng */
+  position: relative;
+}
+
+.course-title, .course-subtitle, .card-text {
+  overflow: hidden; /* Giới hạn văn bản không vượt quá */
+  text-overflow: ellipsis; /* Thêm dấu '...' nếu văn bản vượt quá */
+  white-space: nowrap; /* Giữ văn bản trên cùng một dòng */
+}
+.course-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #aaaaaa;
+}
+.course-subtitle {
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+.course-options {
+  position: absolute;
+  right: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.course-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 94px;
+}
+.course-footer span {
+  font-size: 12px;
+  color: #555;
+}
+.course-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0; /* Màu nền cho phần chưa hoàn thành */
+  overflow: hidden;
+}
+
+.course-progress-bar .progress-completed {
+  height: 100%;
+  background-color: #6a1b9a; /* Màu cho phần đã hoàn thành */
+  width: 20%; /* Phần trăm hoàn thành */
+}
+.next-button, .prev-button {
+  position: absolute;
+  top: 50%;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.next-button {
+  right: 5px;
+}
+.prev-button {
+  left: 3px;
+  display: none;
+}
+.recommend-section {
+  padding: 20px;
+  position: relative;
+}
+.recommend-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+.recommend-section a {
+  color: #0073e6;
+  font-size: 13px;
+  text-decoration: none;
+  box-shadow: 0 1px;
+}
+.recommend-card {
+  display: flex;
+  flex-direction: column; /* Chuyển thành cột để ảnh nằm trên và văn bản nằm dưới */
+  margin-right: 20px;
+  width: 343px;
+  flex-shrink: 0;
+}
+
+.recommend-card img {
+  width: 343px;
+  height: 200px;
+  border: 1px solid #ccc;
+}
+
+.recommend-card .card-body {
+  padding: 10px 10px 0px 0px;
+  text-align: left;
+}
+
+.recommend-card .card-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.recommend-card .card-text {
+  font-size: 13px; 
+  padding: 5px 0px;
+}
+
+.course-rating {
+  font-size: 14px;
+  color: #555;
+}
+
+.course-rating .stars {
+  color: #f39d12;
+  font-weight: bold;
+}
+.container {
+  border: 1px dashed #d3d3d3;
+  padding: 40px;
+  text-align: center;
+  background-color: #fff;
+  position: relative;
+  width: auto;
+  margin: 20px;
+}
+.icon {
+  font-size: 25px;
+  color: #f4a261;
+  margin-bottom: 20px;
+}
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: 'Times New Roman', Times, serif;
+}
+.subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+.button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+}

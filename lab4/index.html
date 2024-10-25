@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <!-- Tab Navigation -->
+    <div class="tab-container">
+        <button class="tab-link" onclick="openTab(event, 'BusinessOps')">Business Operations</button>
+        <button class="tab-link" onclick="openTab(event, 'CloudComputing')">Cloud Computing</button>
+        <button class="tab-link" onclick="openTab(event, 'Cybersecurity')">Cybersecurity</button>
+        <button class="tab-link" onclick="openTab(event, 'DataScience')">Data Science</button>
+        <button class="tab-link" onclick="openTab(event, 'Development')">Development</button>
+        <button class="tab-link" onclick="openTab(event, 'ITOps')">IT Operations</button>
+        <button class="tab-link" onclick="openTab(event, 'LanguageLearning')">Language Learning</button>
+        <button class="tab-link" onclick="openTab(event, 'Leadership')">Leadership & Management</button>
+        <button class="tab-link" onclick="openTab(event, 'Marketing')">Marketing</button>
+    </div>
+      <!-- Welcome Section -->
+      <section class="welcome-section">
+          <div class="welcome-message">
+              <div class="avatar">N</div>
+              <div>
+                  <h2>Welcome back, Le Ngoc Chau</h2>
+                  <p style="margin-top: 10px; font-weight: bold;" ><a href="#" class="edit-profile">Add occupation and interests</a></p>
+              </div>
+          </div>
+      </section>
+  
+      <!-- Weekly Streak Section -->
+      <section class="streak-section">
+          <div class="streak-info">
+              <h3 style="font-size: 22px;">Weekly streak</h3>
+              <p style="margin-top: 10px; margin-right: -100px;">One ring down, one to go. Keep it up!</p>
+          </div>
+          <img src="img/image.png" alt="logo1" width="50" height="50">
+          <div class="streak-time">
+              <p><span style="font-size: 20px; font-weight: bold;">2</span> weeks</p>
+              <span>Current streak</span>
+          </div>
+          <img src="img/oval.png" alt="logo2" style="margin-top: -20px; margin-left: -90px;" width="60" height="60">
+          <div class="streak-progress">
+              <ul>
+                <li>
+                    <span style="font-weight: bold;">11</span>/30 course min
+                    <span class="info-icon">i</span> <!-- Biểu tượng "i" -->
+                </li>
+                <li><span style="font-weight: bold;">4</span>/1 visit</li>
+              </ul>
+              <span>Oct 13 - 19</span>
+              <p style="padding-top: 15px; margin-left: 70px;"><a href="See all activity" class="see-activity">See all activity</a></p>
+          </div>
+      </section>
+  
+      <!-- Pick Up Where You Left Off Section -->
+      <div class="courses-section">
+          <div class="courses-pick">
+              <h3 style="font-size: 25px; font-family: 'Times New Roman', Times, serif;">Pick up where you left off</h3>
+              <p><a href="My learning" class="see-activity">My learning</a></p>
+          </div>
+          <!-- Add new tab menu for Courses, Learning Paths, and Certification Preparation -->
+          <div class="learning-tabs">
+              <button id="Courses" class="tab-link active" style="margin: 0px 10px 0px 0px;" onclick="openTab(event, 'Courses')">Courses</button>
+              <button id="LearningPaths" class="tab-link" onclick="openTab(event, 'LearningPaths')">Learning paths</button>
+              <button id="Certification" class="tab-link" onclick="openTab(event, 'Certification')">Certification preparation</button>
+          </div>
+          <div class="tab-underline"></div>
+      </div>
+      <div class="courses-container">
+          <section class="courses-section">
+          <div class="prev-button">
+              <i class="fas fa-chevron-left"></i>
+          </div>
+          <div class="courses">
+              <div class="course-card">
+                  <img src="img/fpt.png" alt="Course 1">
+                  <div class="course-content">
+                      <div class="course-options">
+                          <i class="fas fa-ellipsis-v"></i>
+                      </div>
+                      <div class="course-title">FPT_ISMS Refresh Training S2 2024 (VietNam)</div>
+                      <div class="course-subtitle">1. Introduction</div>
+                      <div class="course-footer">
+                          <p style="font-size: 11px;"><span style="font-weight: bold;">Lecture</span> • 1m</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="course-card">
+                  <img src="img/mulesoft.png" alt="Course 2">
+                  <div class="course-content">
+                      <div class="course-options">
+                          <i class="fas fa-ellipsis-v"></i>
+                      </div>
+                      <div class="course-title">MuleSoft 4.X Complete Guide For Beginners</div>
+                      <div class="course-subtitle">2. Integration introduction</div>
+                      <div class="course-footer">
+                          <p style="font-size: 11px;"><span style="font-weight: bold;">Lecture</span> • 6m left</p>
+                      </div>
+                      <div class="course-progress-bar">
+                          <div class="progress-completed"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="course-card">
+                  <img src="img/english.png" alt="Course 3">
+                  <div class="course-content">
+                      <div class="course-options">
+                          <i class="fas fa-ellipsis-v"></i>
+                      </div>
+                      <div class="course-title">English Vocabulary: 504 Essential Words</div>
+                      <div class="course-subtitle">7. Quiz and Questions</div>
+                      <div class="course-footer">
+                          <p style="font-size: 11px;"><span style="font-weight: bold;">Quiz</span> • 9 questions</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="next-button">
+              <i class="fas fa-chevron-right"></i>
+          </div>
+      </section>
+      </div>
+  
+  <!-- Section: Based on certification interests -->
+  <section class="recommend-section">
+      <h2 style="padding-right: 15px;">Based on your certification interests, we recommend <a href="#">Edit certification interests</a></h2>
+      <div class="prev-button">
+          <i class="fas fa-chevron-left"></i>
+      </div>
+      <div class="recommendations">
+          <div class="recommend-card">
+              <img src="img/oracle.png" alt="Java Programmer Course">
+              <div class="card-body">
+                  <h5 class="card-title">Oracle Certified Associate Java Programmer (OCAJP) 1Z0-808</h5>
+                  <p class="card-text">Andrii Piatakha, Learn IT University</p>
+                  <div class="course-rating">
+                      <span class="stars">4.6 ★★★★☆</span>
+                      <span class="reviews">(438)</span>
+                  </div>
+              </div>
+          </div>
+          <div class="recommend-card">
+              <img src="img/associate.png" alt="Java Certification Course">
+              <div class="card-body">
+                  <h5 class="card-title">Oracle Java Certification - Pass the Associate 1Z0-808 Exam</h5>
+                  <p class="card-text">Tim Buchalka's Learn Programming Academy, Goran Lochert</p>
+                  <div class="course-rating">
+                      <span class="stars">4.6 ★★★★☆</span>
+                      <span class="reviews">(5,906)</span>
+                  </div>
+              </div>
+          </div>
+          <div class="recommend-card">
+              <img src="img/complete.png" alt="Java SE 8 Bootcamp">
+              <div class="card-body">
+                  <h5 class="card-title">Complete Java SE 8 Developer Bootcamp - OCA Prep Included</h5>
+                  <p class="card-text">Intertech Training, Jeff Jensen</p>
+                  <div class="course-rating">
+                      <span class="stars">4.6 ★★★★★</span>
+                      <span class="reviews">(9,726)</span>
+                  </div>
+              </div>
+          </div>
+          <div class="recommend-card">
+              <img src="img/spring.avif" alt="Java SE 11 Programmer Certification">
+              <div class="card-body">
+                  <h5 class="card-title">Spring Professional Certification Exam Tutorial - Module 02</h5>
+                  <p class="card-text">Dominik Cebula</p>
+                  <div class="course-rating">
+                      <span class="stars">4.6 ★★★★☆</span>
+                      <span class="reviews">(1,121)</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="next-button">
+          <i class="fas fa-chevron-right"></i>
+      </div>
+  </section>
+  <div class="container">
+      <div class="close">&times;</div>
+      <div class="icon"><i class="fas fa-user"></i></div>
+      <div class="title">Personalize your learning experience</div>
+      <div class="subtitle">Add your occupation and interests to get better content recommendations.</div>
+      <button class="button">Add occupation and interests</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
