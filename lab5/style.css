@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+.header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: left;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.header p {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.header a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.info-icon {
+  font-size: 10px; 
+  font-weight: bold;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 50%;
+  padding: 1px 5px; 
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 20px;
+  font-size: 1rem;
+}
+
+.nav-tabs a {
+  color: white;
+  text-decoration: none;
+  padding-bottom: 5px;
+  position: relative;
+  margin-bottom: -15px;
+}
+
+.nav-tabs a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: white;
+}
+
+.tab-content {
+  display: none; 
+}
+
+.tab-content.active {
+  display: block;
+  background-color: #fff;
+}
+
+.filter-bar {
+  padding: 15px 20px;
+  background-color: #fff;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sort-section, .filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sort-options, .filter-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-options select, .filter-options select {
+  padding: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.filter-options button {
+  padding: 10px;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  padding-top: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #000000;
+  border-radius: 4px 0 0 4px;
+  height: 40px;
+  box-sizing: border-box; 
+}
+
+.search-bar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; 
+  height: 40px; /* Đảm bảo chiều cao bằng với input */
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0; /* Loại bỏ padding để icon căn giữa */
+}
+
+.course-grid {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 20px;
+  padding: 20px;
+}
+
+.course-card {
+  position: relative; 
+  flex: 1 1 23%; /* Thay đổi flex-basis để có thể điều chỉnh kích thước theo tỷ lệ */
+  max-width: 350px; /* Giới hạn chiều rộng tối đa */
+  height: 100%; /* Giữ chiều cao cố định */
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover; /* Đảm bảo hình ảnh được cắt và làm đầy khung hình */
+}
+
+.course-card .course-option1 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #000000;
+  border: 1px solid #fff;
+  background-color: #fff;
+  padding: 5px 10px;
+}
+
+.course-card h2 {
+  font-size: 1rem;
+  color: #333;
+  padding: 5px 0px 0px;
+}
+
+.course-card-p {
+  color: #666;
+  font-size: 0.85rem;
+  padding: 5px 0px 5px;
+}
+
+.course-progress-bar-all {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #e0e0e0; /* Màu nền cho phần chưa hoàn thành */
+  overflow: hidden;
+}
+
+.course-card .progress {
+  font-size: 0.8rem;
+  padding: 5px 0px 0px;
+}
+
+.progress-container {
+  display: flex; /* Sử dụng flexbox để sắp xếp */
+  justify-content: space-between; /* Đặt khoảng cách giữa các phần tử */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  font-size: 0.85rem; /* Kích thước chữ nhỏ hơn */
+}
+
+.rating {
+  text-align: right;
+  color: #f39c12;
+  font-size: 18px;
+}
+
+.rating-text {
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.course-learning {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+.course-card1 {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  position: relative;
+  width: 600px;
+  height: 100%;
+}
+
+.course-content {
+  display: flex;
+}
+
+.course-image {
+  width: 100%;
+  max-width: 150px;
+  height: 90px;
+  margin-right: 10px;
+}
+
+.course-details {
+  width: 70%;
+  padding: 10px;
+  white-space: normal;
+  overflow: hidden;
+  flex: 1;
+}
+
+.course-progress-bar-all {
+  width: 100%;
+  height: 6px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+  margin-top: auto;
+}
+.empty-state {
+  background-color: #ffffff; /* Màu nền trắng cho phần empty-state */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666; /* Màu chữ */
+  font-size: 1.5rem;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px; /* Đệm để tránh chữ dính sát vào các cạnh */
+}

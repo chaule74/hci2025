@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="header">
+        <h1>My learning</h1>
+        <p>87hr 36min 
+            <span style="font-weight: normal; color: #aaaaaa;">watched</span> 
+            <span class="info-icon">i</span> 
+            <a href="#">View all activity</a>
+        </p>
+        <div class="nav-tabs">
+            <a href="#" class="tab-link active" data-content="all">All courses</a>
+            <a href="#" class="tab-link" data-content="learning-paths">Learning paths</a>
+            <a href="#" class="tab-link" data-content="certifications">Certifications</a>
+            <a href="#" class="tab-link" data-content="archived">Archived</a>
+            <a href="#" class="tab-link" data-content="learning-tools">Learning tools</a>
+        </div>
+    </div>
+    
+    <!-- Nội dung cho tab All courses -->
+    <div id="content-container" class="tab-content active" data-category="all">
+        <div class="filter-bar" id="filter-bar">
+            <div class="sort-section">
+                <label for="sort-by">Sort by:</label>
+                <div class="sort-options">
+                    <select id="sort-by">
+                        <option>Recently Accessed</option>
+                        <option>Alphabetical</option>
+                        <option>Most Popular</option>
+                    </select>
+                </div>
+            </div>
+    
+            <div class="filter-section">
+                <label for="filter-by">Filter by:</label>
+                <div class="filter-options">
+                    <select id="filter-by">
+                        <option value="all">All Categories</option>
+                        <option value="development">Development</option>
+                        <option value="business">Business</option>
+                        <option value="it">IT & Software</option>
+                    </select>
+                    <select>
+                        <option>Progress</option>
+                        <option>Completed</option>
+                        <option>In Progress</option>
+                        <option>Not Started</option>
+                    </select>
+                    <select>
+                        <option>Instructor</option>
+                        <option>Instructor A</option>
+                        <option>Instructor B</option>
+                    </select>
+                    <button>Reset</button>
+                </div>
+            </div>
+    
+            <div class="search-bar">
+                <input type="text" placeholder="Search my courses">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    
+        <div class="course-grid" id="course-content">
+            <div class="course-card" data-category="all">
+                <div class="course-option1">⋮</div>
+                <img src="img/isms.jpg" alt="Course 1">
+                <h2>FPT_ISMS Refresh Training S2 2024 (Vietnamese)</h2>
+                <p class="course-card-p">FSOFT Content Development</p>
+                <div class="course-progress-bar-all">
+                    <div class="progress-completed-all" style="height: 100%; background-color: #6a1b9a;"></div>
+                </div>
+                <div class="progress-container">
+                    <p class="progress">100% complete</p>
+                    <div class="rating">
+                        <span>☆☆☆☆☆</span>
+                    </div>
+                </div>
+                <p class="rating-text">Leave a rating</p>
+            </div>
+    
+            <div class="course-card" data-category="all">
+                <div class="course-option1">⋮</div>
+                <img src="img/springboot.png" alt="Course 1">
+                <h2>The Complete Spring Boot Development Bootcamp</h2>
+                <p class="course-card-p">Learn The Part Inc., Rayan Slim</p>
+                <div class="course-progress-bar-all">
+                    <div class="progress-completed-all" style="height: 100%; background-color: #6a1b9a;"></div>
+                </div>
+                <div class="progress-container">
+                    <p class="progress">100% complete</p>
+                    <div class="rating">
+                        <span>☆☆☆☆☆</span>
+                    </div>
+                </div>
+                <p class="rating-text">Leave a rating</p>
+            </div>
+            
+            <div class="course-card" data-category="all">
+                <div class="course-option1">⋮</div>
+                <img src="img/mulesoft.jpg" alt="Course 1">
+                <h2>MuleSoft 4.X Complete Guide For Beginners - Hands On</h2>
+                <p class="course-card-p">Chinna Reddy</p>
+                <div class="course-progress-bar-all">
+                    <div class="progress-completed-all" style="height: 100%; background-color: #6a1b9a; width: 1%;"></div>
+                </div>
+                <div class="progress-container">
+                    <p class="progress">1% complete</p>
+                    <div class="rating">
+                        <span>☆☆☆☆☆</span>
+                    </div>
+                </div>
+                <p class="rating-text">Leave a rating</p>
+            </div>
+            
+            <div class="course-card" data-category="all">
+                <div class="course-option1">⋮</div>
+                <img src="img/english.png" alt="Course 1">
+                <h2>English Vocabulary: 504 Essential Words through</h2>
+                <p class="course-card-p">Mister Rabiey</p>
+                <div class="course-progress-bar-all">
+                    <div class="progress-completed-all" style="height: 100%; background-color: #6a1b9a; width: 15%;"></div>
+                </div>
+                <div class="progress-container">
+                    <p class="progress">15% complete</p>
+                    <div class="rating">
+                        <span>★★★★★</span>
+                    </div>
+                </div>
+                <p class="rating-text">Leave a rating</p>
+            </div>
+            
+            <div class="course-card" data-category="all">
+                <div class="course-option1">⋮</div>
+                <img src="img/backend.jpg" alt="Course 1">
+                <h2>Build a Backend REST API with Python & Diango - Advanced</h2>
+                <p class="course-card-p">Mark Winterbottom, Brooke Rutherford</p>
+                <div class="course-progress-bar-all">
+                    <div class="progress-completed-all" style="height: 100%; background-color: #6a1b9a; width: 30%;"></div>
+                </div>
+                <div class="progress-container">
+                    <p class="progress">30% complete</p>
+                    <div class="rating">
+                        <span>★★★★★</span>
+                    </div>
+                </div>
+                <p class="rating-text">Leave a rating</p>
+            </div>
+    
+            <div class="course-card" data-category="all">
+                <div class="course-option1">⋮</div>
+                <img src="img/python.jpg" alt="Course 1">
+                <h2>ChatGPT Python Programming: AI Guided Code Mastery</h2>
+                <p class="course-card-p">Prof. M. Higazi</p>
+                <div class="course-progress-bar-all">
+                    <div class="progress-completed-all" style="height: 100%; background-color: #6a1b9a; width: 20%;"></div>
+                </div>
+                <div class="progress-container">
+                    <p class="progress">20% complete</p>
+                    <div class="rating">
+                        <span>★★★★★</span>
+                    </div>
+                </div>
+                <p class="rating-text">Leave a rating</p>
+            </div>
+    
+            <div class="course-card" data-category="all">
+                <div class="course-option1">⋮</div>
+                <img src="img/java.jpg" alt="Course 1">
+                <h2>Java Certification (1Z0-819) Topic-wise Tests Part-1</h2>
+                <p class="course-card-p">Udayan Khattry</p>
+                <div class="course-progress-bar-all">
+                    <div class="progress-completed-all" style="height: 100%; background-color: #6a1b9a; width: 0%;"></div>
+                </div>
+                <div class="progress-container">
+                    <p class="progress">0% complete</p>
+                    <div class="rating">
+                        <span>★★★★★</span>
+                    </div>
+                </div>
+                <p class="rating-text">Leave a rating</p>
+            </div>
+    
+            <div class="course-card" data-category="all">
+                <div class="course-option1">⋮</div>
+                <img src="img/pmp.jpg" alt="Course 1">
+                <h2>FPT_PMP Training</h2>
+                <p class="course-card-p">Sorin Dumitrascu</p>
+                <div class="course-progress-bar-all">
+                    <div class="progress-completed-all" style="height: 100%; background-color: #6a1b9a; width: 10%;"></div>
+                </div>
+                <div class="progress-container">
+                    <p class="progress">10% complete</p>
+                    <div class="rating">
+                        <span>★★★★★</span>
+                    </div>
+                </div>
+                <p class="rating-text">Leave a rating</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Nội dung cho tab Learning paths -->
+    <div class="tab-content" data-category="learning-paths">
+        <div class="course-learning">
+            <div class="course-card1">
+                <div class="course-content">
+                    <img src="img/FPT_logo_2010.svg.png" alt="Course Image" class="course-image">
+                    <div class="course-details">
+                        <h2 style="font-size: 15px; color: #ccc;">Learning path</h2>
+                        <p style="font-weight: bold;">Induction Training_GAAFOFY (VI)</p>
+                        <p style="padding-top: 68px; font-size: 13px;">1 of 6 items complete</p>
+                    </div>
+                    <div class="course-option1" style="padding: 10px; font-weight: bold;">⋮</div>
+                </div>
+                <div class="course-progress-bar-all">
+                    <div class="progress-completed" style="height: 100%; background-color: #6a1b9a; width: 20%;"></div>
+                </div>
+            </div>
+            <div class="course-card1">
+                <div class="course-content">
+                    <img src="img/FPT_logo_2010.svg.png" alt="Course Image" class="course-image">
+                    <div class="course-details">
+                        <h2 style="font-size: 15px; color: #ccc;">Learning path</h2>
+                        <p style="font-weight: bold;">Induction Training for BO_IT_Mandatory (VI)</p>
+                        <p style="padding-top: 68px; font-size: 13px;">9 of 9 items complete</p>
+                    </div>
+                    <div class="course-option1" style="padding: 10px; font-weight: bold;">⋮</div>
+                </div>
+                <div class="course-progress-bar-all">
+                    <div class="progress-completed" style="height: 100%; background-color: #6a1b9a;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Nội dung cho tab Certifications -->
+    <div class="tab-content" data-category="certifications">
+        <div class="empty-state">No courses available in Certifications.</div>
+    </div>
+    
+    <!-- Nội dung cho tab Archived -->
+    <div class="tab-content" data-category="archived">
+        <div class="empty-state">No courses available in Archived.</div>
+    </div>
+    
+    <!-- Nội dung cho tab Learning tools -->
+    <div class="tab-content" data-category="learning-tools">
+        <div class="empty-state">No courses available in Learning tools.</div>
+    </div>
+  <script src="script.js"></script>
+</body>
+</html>
