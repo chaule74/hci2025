@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Website-Human-Computer Interaction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -320,6 +321,185 @@
             padding-left: 20px;
         }
 
+        #result h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .main-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow elements to wrap when necessary */
+        }
+
+        .left-section {
+            flex: 8;
+        }
+
+        .right-section {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-section h3 {
+            font-size: 1.5rem;
+            color: #0072ff;
+            margin-bottom: 20px;
+        }
+
+        .average-percent {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .section-result {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .section-result h3 {
+            font-size: 1.8rem;
+            color: #0072ff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .progress-container-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-label {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4A4A4A;
+        }
+
+        .progress-container {
+            flex: 1;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 50px;
+            overflow: hidden;
+            position: relative;
+            margin-right: 15px;
+        }
+
+        .progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(to right, #0072ff, #00c6ff);
+            border-radius: 50px;
+        }
+
+        .progress-percent {
+            font-weight: bold;
+            font-size: 1rem;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .dots {
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        /* Popup Styles */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 95%;
+            height: 85%;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .popup iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .popup .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+            font-weight: bold;
+            background: #f4f4f4;
+            width: 45px;
+            height: 45px;
+            padding: 5px;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .popup .close-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        /* Media Query for small screens */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .left-section {
+                flex: 1;
+                width: 100%;
+            }
+
+            .right-section {
+                flex: 1;
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -332,6 +512,7 @@
                 <li><a href="#" onclick="showPage('home', this)" class="active">Home</a></li>
                 <li><a href="#" onclick="showPage('about', this)">About</a></li>
                 <li><a href="#" onclick="showPage('labs', this)">Labs</a></li>
+                <li><a href="#" onclick="showPage('result', this)">Result</a></li>
             </ul>
         </nav>
     </header>
@@ -352,7 +533,7 @@
         <div class="cv-container">
             <div class="cv-header">
                 <div class="name-title">
-                    <h1>Chau Le</h1>
+                    <h1>Le Ngoc Chau</h1>
                     <p>IT Student</p>
                 </div>
             </div>
@@ -361,13 +542,13 @@
                     <h2>Contact Info</h2>
                     <p>Email: chaule@gmail.com</p>
                     <p>Phone: 0123456789</p>
-                    <h2>Skills</h2>
+                    <h2 style="padding-top: 50px;">Skills</h2>
                     <p>HTML, CSS, JavaScript</p>
                 </div>
                 <div class="cv-main">
                     <h2>Education</h2>
                     <p>Studying Information Technology, Nông Lâm University</p>
-                    <h2>Work Experience</h2>
+                    <h2  style="padding-top: 75px;">Work Experience</h2>
                     <p>Not yet</p>
                 </div>
             </div>
@@ -383,10 +564,6 @@
             <button class="tab-link" onclick="openLab(event, 'lab4')">Lab 4</button>
             <button class="tab-link" onclick="openLab(event, 'lab5')">Lab 5</button>
             <button class="tab-link" onclick="openLab(event, 'lab6')">Lab 6</button>
-            <button class="tab-link" onclick="openLab(event, 'lab7')">Lab 7</button>
-            <button class="tab-link" onclick="openLab(event, 'lab8')">Lab 8</button>
-            <button class="tab-link" onclick="openLab(event, 'lab9')">Lab 9</button>
-            <button class="tab-link" onclick="openLab(event, 'lab10')">Lab 10</button>
         </div>
 
         <!-- Tab Content -->
@@ -461,26 +638,86 @@
         <section id="lab6" class="tab-content" style="display: none;">
             <iframe src="lab6" style="width: 100%; height: 750px; background-color: #fff;" frameborder="0"></iframe>
         </section>
+    </section>
 
-        <section id="lab7" class="tab-content" style="display: none;">
-            <h3>Lab 7: Nội dung Lab 7</h3>
-            <p>Đây là nội dung của Lab 7.</p>
-        </section>
+    <!-- About Section -->
+    <section id="result" style="display: none;">
+        <h2>Kết quả cá nhân</h2>
+        <div class="main-container">
+            <div class="left-section">
+                <!-- Group Web -->
+                <div class="section-result">
+                    <h3>Group Web</h3>
+                    <div class="progress-container-wrapper">
+                        <div class="progress-label">Result</div>
+                        <div class="progress-container" style="margin-left: 125px;">
+                            <div class="progress-bar" data-percent="95"></div>
+                        </div>
+                        <div class="progress-percent">95%</div>
+                        <span class="dots fa-solid fa-ellipsis" class="dots" data-url="https://duyhuunguyen.github.io/GroupWeb/GroupWeb/public/result.html"></span>
+                    </div>
+                    <div class="progress-container-wrapper">
+                        <div class="progress-label">Contact</div>
+                        <div class="progress-container" style="margin-left: 112px;">
+                            <div class="progress-bar" data-percent="100"></div>
+                        </div>
+                        <div class="progress-percent">100%</div>
+                        <span class="dots fa-solid fa-ellipsis" class="dots" data-url="https://duyhuunguyen.github.io/GroupWeb/GroupWeb/public/contact.html"></span>
+                    </div>
+                    <div class="progress-container-wrapper">
+                        <div class="progress-label">Blog</div>
+                        <div class="progress-container" style="margin-left: 140px;">
+                            <div class="progress-bar" data-percent="90"></div>
+                        </div>
+                        <div class="progress-percent">90%</div>
+                        <span class="dots fa-solid fa-ellipsis" class="dots" data-url="https://duyhuunguyen.github.io/GroupWeb/GroupWeb/public/blog_dulich.html"></span>
+                    </div>
+                </div>
+                <!-- Project -->
+                <div class="section-result" style="margin-bottom: 0;">
+                    <h3>Project</h3>
+                    <div class="progress-container-wrapper">
+                        <div class="progress-label">Danh mục</div>
+                        <div class="progress-container" style="margin-left: 93px;">
+                            <div class="progress-bar" data-percent="85%"></div>
+                        </div>
+                        <div class="progress-percent">85%</div>
+                        <span class="dots fa-solid fa-ellipsis" class="dots" data-url="https://duyhuunguyen.github.io/HotelManagerWeb/danhmuc.html"></span>
+                    </div>
+                    <div class="progress-container-wrapper">
+                        <div class="progress-label">Comment</div>
+                        <div class="progress-container" style="margin-left: 95px;">
+                            <div class="progress-bar" data-percent="95"></div>
+                        </div>
+                        <div class="progress-percent">95%</div>
+                        <span class="dots fa-solid fa-ellipsis" class="dots" data-url="https://duyhuunguyen.github.io/HotelManagerWeb/comment.html"></span>
+                    </div>
+                    <div class="progress-container-wrapper">
+                        <div class="progress-label">Hoàng hôn Villa</div>
+                        <div class="progress-container" style="margin-left: 40px;">
+                            <div class="progress-bar" data-percent="95"></div>
+                        </div>
+                        <div class="progress-percent">95%</div>
+                        <span class="dots fa-solid fa-ellipsis" class="dots" data-url=""></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Section -->
+            <div class="right-section">
+                <h3>Average Completion</h3>
+                <div class="average-percent">
+                    <span>85%</span>
+                </div>
+                <img src="https://via.placeholder.com/100" alt="Summary Image" class="summary-image">
+            </div>
+        </div>
 
-        <section id="lab8" class="tab-content" style="display: none;">
-            <h3>Lab 8: Nội dung Lab 8</h3>
-            <p>Đây là nội dung của Lab 8.</p>
-        </section>
-
-        <section id="lab9" class="tab-content" style="display: none;">
-            <h3>Lab 9: Nội dung Lab 9</h3>
-            <p>Đây là nội dung của Lab 9.</p>
-        </section>
-
-        <section id="lab10" class="tab-content" style="display: none;">
-            <h3>Lab 10: Nội dung Lab 10</h3>
-            <p>Đây là nội dung của Lab 10.</p>
-        </section>
+        <!-- Popup -->
+        <div class="overlay"></div>
+        <div class="popup">
+            <div class="close-btn"><i style="margin-left: 5px;" class="fa-solid fa-circle-xmark"></i></div>
+            <iframe src=""></iframe>
+        </div>
     </section>
 
     <footer>
@@ -557,6 +794,83 @@
             } else {
                 document.getElementById("profile-preview").style.display = "none";
             }
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            const dots = document.querySelectorAll(".dots");
+            const modal = document.getElementById("imageModal");
+            const closeModal = document.querySelector(".close-btn");
+
+            dots.forEach(dot => {
+                dot.addEventListener("click", () => {
+                    modal.style.display = "flex";
+                });
+            });
+
+            closeModal.addEventListener("click", () => {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener("click", (event) => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+
+            const progressBars = document.querySelectorAll(".progress-bar");
+
+            progressBars.forEach((bar) => {
+                const percent = parseInt(bar.getAttribute("data-percent"));
+                let currentPercent = 0;
+
+                const updateProgress = () => {
+                    if (currentPercent <= percent) {
+                        bar.style.width = `${currentPercent}%`;
+                        bar.closest('.progress-container-wrapper').querySelector('.progress-percent').innerText = `${currentPercent}%`;
+                        currentPercent++;
+                        requestAnimationFrame(updateProgress);
+                    }
+                };
+
+                updateProgress();
+            });
+            const calculateAverage = () => {
+                const percents = Array.from(progressBars).map(bar =>
+                    parseInt(bar.getAttribute("data-percent"))
+                );
+                const average = Math.round(
+                    percents.reduce((sum, val) => sum + val, 0) / percents.length
+                );
+                document.querySelector(".average-percent span").innerText = `${average}%`;
+            };
+
+            calculateAverage();
+        });
+        // Popup logic
+        const dots = document.querySelectorAll(".dots");
+        const popup = document.querySelector(".popup");
+        const iframe = popup.querySelector("iframe");
+        const overlay = document.querySelector(".overlay");
+        const closeBtn = popup.querySelector(".close-btn");
+
+        dots.forEach(dot => {
+            dot.addEventListener("click", () => {
+                const url = dot.dataset.url;
+                iframe.src = url;
+                popup.style.display = "block";
+                overlay.style.display = "block";
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            popup.style.display = "none";
+            overlay.style.display = "none";
+            iframe.src = ""; // Clear iframe content
+        });
+
+        overlay.addEventListener("click", () => {
+            popup.style.display = "none";
+            overlay.style.display = "none";
+            iframe.src = ""; // Clear iframe content
         });
     </script>    
 </body>
