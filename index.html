@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Website-Human-Computer Interaction</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -17,7 +17,7 @@
                 <li><a href="#" onclick="showPage('home', this)" class="active">Home</a></li>
                 <li><a href="#" onclick="showPage('about', this)">About</a></li>
                 <li><a href="#" onclick="showPage('labs', this)">Labs</a></li>
-                <li><a href="#" onclick="showPage('result', this)">Result</a></li>
+                <li><a href="result.html" onclick="showPage('result', this)">Result</a></li>
             </ul>
         </nav>
     </header>
@@ -144,79 +144,6 @@
             <iframe src="lab6" style="width: 100%; height: 750px; background-color: #fff;" frameborder="0"></iframe>
         </section>
     </section>
-
-    <!-- Result Section -->
-    <section id="result" style="display: none;">
-        <h2>Kết quả cá nhân</h2>
-        <div class="main-container">
-            <div class="left-section">
-                <!-- Group Web -->
-                <div class="section-result">
-                    <h3>Group Web</h3>
-                    <div class="progress-container-wrapper">
-                        <div class="progress-label">Result</div>
-                        <div class="progress-container" style="margin-left: 125px;">
-                            <div class="progress-bar" data-percent="95"></div>
-                        </div>
-                        <div class="progress-percent">95%</div>
-                        <span class="dots fa-solid fa-ellipsis" class="dots" data-url="https://duyhuunguyen.github.io/GroupWeb/GroupWeb/public/result.html"></span>
-                    </div>
-                    <div class="progress-container-wrapper">
-                        <div class="progress-label">Contact</div>
-                        <div class="progress-container" style="margin-left: 112px;">
-                            <div class="progress-bar" data-percent="100"></div>
-                        </div>
-                        <div class="progress-percent">100%</div>
-                        <span class="dots fa-solid fa-ellipsis" class="dots" data-url="https://duyhuunguyen.github.io/GroupWeb/GroupWeb/public/contact.html"></span>
-                    </div>
-                    <div class="progress-container-wrapper">
-                        <div class="progress-label">Blog</div>
-                        <div class="progress-container" style="margin-left: 140px;">
-                            <div class="progress-bar" data-percent="90"></div>
-                        </div>
-                        <div class="progress-percent">90%</div>
-                        <span class="dots fa-solid fa-ellipsis" class="dots" data-url="https://duyhuunguyen.github.io/GroupWeb/GroupWeb/public/blog_dulich.html"></span>
-                    </div>
-                </div>
-                <!-- Project -->
-                <div class="section-result" style="margin-bottom: 0;">
-                    <h3>Project</h3>
-                    <div class="progress-container-wrapper">
-                        <div class="progress-label">Danh mục</div>
-                        <div class="progress-container" style="margin-left: 93px;">
-                            <div class="progress-bar" data-percent="85%"></div>
-                        </div>
-                        <div class="progress-percent">85%</div>
-                        <span class="dots fa-solid fa-ellipsis" class="dots" data-url="https://duyhuunguyen.github.io/HotelManagerWeb/danhmuc.html"></span>
-                    </div>
-                    <div class="progress-container-wrapper">
-                        <div class="progress-label">Comment</div>
-                        <div class="progress-container" style="margin-left: 95px;">
-                            <div class="progress-bar" data-percent="95"></div>
-                        </div>
-                        <div class="progress-percent">95%</div>
-                        <span class="dots fa-solid fa-ellipsis" class="dots" data-url="https://duyhuunguyen.github.io/HotelManagerWeb/comment.html"></span>
-                    </div>
-                    <div class="progress-container-wrapper">
-                        <div class="progress-label">Hoàng hôn Villa</div>
-                        <div class="progress-container" style="margin-left: 40px;">
-                            <div class="progress-bar" data-percent="95"></div>
-                        </div>
-                        <div class="progress-percent">95%</div>
-                        <span class="dots fa-solid fa-ellipsis" class="dots" data-url=""></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Popup -->
-        <div class="overlay"></div>
-        <div class="popup">
-            <div class="close-btn"><i style="margin-left: 5px;" class="fa-solid fa-circle-xmark"></i></div>
-            <iframe src=""></iframe>
-        </div>
-    </section>
-
     <footer>
         <div class="footer-container">
             <div class="footer-group-info">
@@ -291,45 +218,6 @@
             } else {
                 document.getElementById("profile-preview").style.display = "none";
             }
-        });
-        document.addEventListener("DOMContentLoaded", () => {
-            const dots = document.querySelectorAll(".dots");
-            const closeModal = document.querySelector(".close-btn");
-
-            const progressBars = document.querySelectorAll(".progress-bar");
-
-            progressBars.forEach((bar) => {
-                const percent = parseInt(bar.getAttribute("data-percent"));
-                let currentPercent = 0;
-
-                const updateProgress = () => {
-                    if (currentPercent <= percent) {
-                        bar.style.width = `${currentPercent}%`;
-                        bar.closest('.progress-container-wrapper').querySelector('.progress-percent').innerText = `${currentPercent}%`;
-                        currentPercent++;
-                        requestAnimationFrame(updateProgress);
-                    }
-                };
-
-                updateProgress();
-            });
-        });
-        // Popup logic
-        document.querySelectorAll(".dots").forEach((dot) => {
-            dot.addEventListener("click", function () {
-                const url = this.getAttribute("data-url");
-                if (url) {
-                    document.querySelector(".popup iframe").src = url;
-                    document.querySelector(".overlay").style.display = "block";
-                    document.querySelector(".popup").style.display = "block";
-                }
-            });
-        });
-
-        document.querySelector(".close-btn").addEventListener("click", function () {
-            document.querySelector(".overlay").style.display = "none";
-            document.querySelector(".popup").style.display = "none";
-            document.querySelector(".popup iframe").src = "";
         });
     </script>    
 </body>
