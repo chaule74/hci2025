@@ -207,14 +207,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Right Section -->
-            <div class="right-section">
-                <h3>Average Completion</h3>
-                <div class="average-percent">
-                    <span>85%</span>
-                </div>
-                <img src="https://via.placeholder.com/100" alt="Summary Image" class="summary-image">
-            </div>
         </div>
 
         <!-- Popup -->
@@ -321,17 +313,6 @@
 
                 updateProgress();
             });
-            const calculateAverage = () => {
-                const percents = Array.from(progressBars).map(bar =>
-                    parseInt(bar.getAttribute("data-percent"))
-                );
-                const average = Math.round(
-                    percents.reduce((sum, val) => sum + val, 0) / percents.length
-                );
-                document.querySelector(".average-percent span").innerText = `${average}%`;
-            };
-
-            calculateAverage();
         });
         // Popup logic
         const dots = document.querySelectorAll(".dots");
