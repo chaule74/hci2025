@@ -313,6 +313,142 @@ footer {
     padding-left: 20px;
 }
 
+#result h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.main-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow elements to wrap when necessary */
+}
+
+.left-section {
+    flex: 8;
+}
+
+.section-result {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.section-result h3 {
+    font-size: 1.8rem;
+    color: #0072ff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.progress-container-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4A4A4A;
+}
+
+.progress-container {
+    flex: 1;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 15px;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, #0072ff, #00c6ff);
+    border-radius: 50px;
+}
+
+.progress-percent {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+    margin-right: 10px;
+}
+
+.dots {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 85%;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.popup iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    background: #f4f4f4;
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.popup .close-btn:hover {
+    background: #e0e0e0;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
 /* Media Query for small screens */
 @media (max-width: 768px) {
     .main-container {

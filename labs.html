@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website-Human-Computer Interaction</title>
+    <title>Labs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,53 +14,15 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html" onclick="showPage('home', this)" class="active">Home</a></li>
+                <li><a href="index.html" onclick="showPage('home', this)">Home</a></li>
                 <li><a href="CV.html" onclick="showPage('about', this)">About</a></li>
-                <li><a href="labs.html" onclick="showPage('labs', this)">Labs</a></li>
+                <li><a href="labs.html" onclick="showPage('labs', this)" class="active">Labs</a></li>
                 <li><a href="result.html" onclick="showPage('result', this)">Result</a></li>
             </ul>
         </nav>
     </header>
-
-    <!-- Home Section -->
-    <section id="home" class="home-section">
-        <div class="text-content">
-        <h1>Home</h1>
-        <p>Welcome to the Human-Computer Interaction project site of ChauLe!</p>
-    </div>
-    <div class="image-content">
-        <img alt="Illustration of people working with technology, including a laptop, smartphone, and servers" height="400" src="hero-img.png" width="600"/>
-    </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" style="display: none;">
-        <div class="cv-container">
-            <div class="cv-header">
-                <div class="name-title">
-                    <h1>Le Ngoc Chau</h1>
-                    <p>IT Student</p>
-                </div>
-            </div>
-            <div class="cv-main-content">
-                <div class="cv-sidebar">
-                    <h2>Contact Info</h2>
-                    <p>Email: chaule@gmail.com</p>
-                    <p>Phone: 0123456789</p>
-                    <h2 style="padding-top: 50px;">Skills</h2>
-                    <p>HTML, CSS, JavaScript</p>
-                </div>
-                <div class="cv-main">
-                    <h2>Education</h2>
-                    <p>Studying Information Technology, Nông Lâm University</p>
-                    <h2  style="padding-top: 75px;">Work Experience</h2>
-                    <p>Not yet</p>
-                </div>
-            </div>
-    </section>
-
     <!-- Labs Section -->
-    <section id="labs" style="display: none;">
+    <section id="labs">
         <!-- Tab Navigation -->
         <div class="tab-container">
             <button class="tab-link active" onclick="openLab(event, 'lab1')">Lab 1</button>
@@ -162,30 +124,6 @@
     </footer>
 
     <script>
-        function showPage(pageId, element) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-
-            if (pageId === 'home') {
-                document.getElementById(pageId).style.display = 'flex';
-            } else {
-                document.getElementById(pageId).style.display = 'block';
-            }
-
-            const navLinks = document.querySelectorAll('nav ul li a');
-            navLinks.forEach(navLink => {
-                navLink.classList.remove('active');
-            });
-
-            element.classList.add('active');
-
-            if (pageId === 'labs') {
-                document.querySelector(".tab-link").click();
-            }
-        }
-        
         function openLab(evt, labName) {
             var i, tabcontent, tablinks;
     
@@ -204,21 +142,6 @@
             document.getElementById(labName).classList.add("active");
             evt.currentTarget.className += " active";
         }
-    
-        function resetForm() {
-            document.querySelector("form").reset();
-            document.getElementById("profile-preview").style.display = "none";
-        }
-        
-        document.getElementById("profile-picture").addEventListener("input", function() {
-            var url = this.value;
-            if (url) {
-                document.getElementById("profile-preview").src = url;
-                document.getElementById("profile-preview").style.display = "block";
-            } else {
-                document.getElementById("profile-preview").style.display = "none";
-            }
-        });
     </script>    
 </body>
 </html>
