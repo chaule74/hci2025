@@ -315,31 +315,21 @@
             });
         });
         // Popup logic
-        const dots = document.querySelectorAll(".dots");
-        const popup = document.querySelector(".popup");
-        const iframe = popup.querySelector("iframe");
-        const overlay = document.querySelector(".overlay");
-        const closeBtn = popup.querySelector(".close-btn");
-
-        dots.forEach(dot => {
-            dot.addEventListener("click", () => {
-                const url = dot.dataset.url;
-                iframe.src = url;
-                popup.style.display = "block";
-                overlay.style.display = "block";
+        document.querySelectorAll(".dots").forEach((dot) => {
+            dot.addEventListener("click", function () {
+                const url = this.getAttribute("data-url");
+                if (url) {
+                    document.querySelector(".popup iframe").src = url;
+                    document.querySelector(".overlay").style.display = "block";
+                    document.querySelector(".popup").style.display = "block";
+                }
             });
         });
 
-        closeBtn.addEventListener("click", () => {
-            popup.style.display = "none";
-            overlay.style.display = "none";
-            iframe.src = ""; // Clear iframe content
-        });
-
-        overlay.addEventListener("click", () => {
-            popup.style.display = "none";
-            overlay.style.display = "none";
-            iframe.src = ""; // Clear iframe content
+        document.querySelector(".close-btn").addEventListener("click", function () {
+            document.querySelector(".overlay").style.display = "none";
+            document.querySelector(".popup").style.display = "none";
+            document.querySelector(".popup iframe").src = "";
         });
     </script>    
 </body>
