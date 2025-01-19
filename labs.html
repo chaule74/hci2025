@@ -5,22 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Labs</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="logo">
-            <h1 onclick="showPage('home', document.querySelector('nav ul li a'))">CHAULE</h1>
-        </div>
+        <div class="logo"><a href="index.html">CHAULE</a></div>
         <nav>
-            <ul>
-                <li><a href="index.html" onclick="showPage('home', this)">Home</a></li>
-                <li><a href="CV.html" onclick="showPage('about', this)">About</a></li>
-                <li><a href="labs.html" onclick="showPage('labs', this)" class="active">Labs</a></li>
-                <li><a href="result.html" onclick="showPage('result', this)">Result</a></li>
-            </ul>
+            <a href="index.html">Home</a>
+            <a href="CV.html">About</a>
+            <a href="labs.html" class="active">Labs</a>
+            <a href="result.html">Result</a>
         </nav>
     </header>
+
     <!-- Labs Section -->
     <section id="labs">
         <!-- Tab Navigation -->
@@ -106,19 +104,20 @@
             <iframe src="lab6" style="width: 100%; height: 750px; background-color: #fff;" frameborder="0"></iframe>
         </section>
     </section>
+
+    <!-- Footer -->
     <footer>
         <div class="footer-container">
-            <div class="footer-group-info">
-                <h3>Website Information</h3>
+            <div class="footer-section">
+                <p>Website Information</p>
                 <p>This project is developed by ChauLe of the Human-Computer Interaction course.</p>
             </div>
-            
-            <div class="footer-newsletter">
-                <h3>Newsletter</h3>
-                <form class="form-newsletter" action="">
-                    <input type="email" placeholder="Your email address">
-                    <button type="submit">Send</button>
-                </form>
+            <div class="footer-section">
+                <label for="feedback">Send us your feedback:</label>
+                <div class="footer-bottom">
+                    <input type="text" id="feedback" placeholder="Type your feedback here...">
+                    <button>Send</button>
+                </div>
             </div>
         </div>
     </footer>
@@ -142,6 +141,6 @@
             document.getElementById(labName).classList.add("active");
             evt.currentTarget.className += " active";
         }
-    </script>    
+    </script> 
 </body>
 </html>

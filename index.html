@@ -3,222 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website-Human-Computer Interaction</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Responsive Web Layout</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="logo">
-            <h1 onclick="showPage('home', document.querySelector('nav ul li a'))">CHAULE</h1>
-        </div>
+        <div class="logo"><a href="index.html">CHAULE</a></div>
         <nav>
-            <ul>
-                <li><a href="index.html" onclick="showPage('home', this)" class="active">Home</a></li>
-                <li><a href="CV.html" onclick="showPage('about', this)">About</a></li>
-                <li><a href="labs.html" onclick="showPage('labs', this)">Labs</a></li>
-                <li><a href="result.html" onclick="showPage('result', this)">Result</a></li>
-            </ul>
+            <a href="index.html" class="active">Home</a>
+            <a href="CV.html" >About</a>
+            <a href="labs.html" >Labs</a>
+            <a href="result.html" >Result</a>
         </nav>
     </header>
 
-    <!-- Home Section -->
-    <section id="home" class="home-section">
-        <div class="text-content">
-        <h1>Home</h1>
-        <p>Welcome to the Human-Computer Interaction project site of ChauLe!</p>
-    </div>
-    <div class="image-content">
-        <img alt="Illustration of people working with technology, including a laptop, smartphone, and servers" height="400" src="hero-img.png" width="600"/>
-    </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" style="display: none;">
-        <div class="cv-container">
-            <div class="cv-header">
-                <div class="name-title">
-                    <h1>Le Ngoc Chau</h1>
-                    <p>IT Student</p>
-                </div>
-            </div>
-            <div class="cv-main-content">
-                <div class="cv-sidebar">
-                    <h2>Contact Info</h2>
-                    <p>Email: chaule@gmail.com</p>
-                    <p>Phone: 0123456789</p>
-                    <h2 style="padding-top: 50px;">Skills</h2>
-                    <p>HTML, CSS, JavaScript</p>
-                </div>
-                <div class="cv-main">
-                    <h2>Education</h2>
-                    <p>Studying Information Technology, Nông Lâm University</p>
-                    <h2  style="padding-top: 75px;">Work Experience</h2>
-                    <p>Not yet</p>
-                </div>
-            </div>
-    </section>
-
-    <!-- Labs Section -->
-    <section id="labs" style="display: none;">
-        <!-- Tab Navigation -->
-        <div class="tab-container">
-            <button class="tab-link active" onclick="openLab(event, 'lab1')">Lab 1</button>
-            <button class="tab-link" onclick="openLab(event, 'lab2')">Lab 2</button>
-            <button class="tab-link" onclick="openLab(event, 'lab3')">Lab 3</button>
-            <button class="tab-link" onclick="openLab(event, 'lab4')">Lab 4</button>
-            <button class="tab-link" onclick="openLab(event, 'lab5')">Lab 5</button>
-            <button class="tab-link" onclick="openLab(event, 'lab6')">Lab 6</button>
+    <!-- Main Content (Home) -->
+    <main id="home">
+        <div class="content">
+            <h1>Home</h1>
+            <p>Welcome to the Human-Computer Interaction project site of ChauLe!</p>
         </div>
+        <div class="image">
+            <img src="hero-img.png" alt="Animated Image">
+        </div>
+    </main>
 
-        <!-- Tab Content -->
-        <section id="lab1" class="tab-content active">
-            <div class="form-container">
-                <form class="form-lab1" action="" method="post">
-                    <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input type="text" id="username" name="username" placeholder="Enter your username" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address:</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="fullname">Full Name (optional):</label>
-                        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="role">Role:</label>
-                        <select id="role" name="role" required>
-                            <option value="">--Select Role--</option>
-                            <option value="admin">Admin</option>
-                            <option value="user">User</option>
-                        </select>
-                    </div>
-
-                    <!-- Profile Picture -->
-                    <div class="form-group">
-                        <label for="profile-picture">Profile Picture (URL):</label>
-                        <input type="url" id="profile-picture" name="profile-picture" placeholder="Enter profile picture URL">
-                        <img id="profile-preview" src="" alt="Profile Picture Preview" style="display:none;">
-                    </div>
-
-                    <!-- Account Created At -->
-                    <div class="form-group">
-                        <label>Account Created At:</label>
-                        <div class="readonly" id="created-at">01/01/2024 12:00 PM</div>
-                    </div>
-                    <div class="form-group">
-                        <label>Last Updated At:</label>
-                        <div class="readonly" id="updated-at">Not updated yet</div> 
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Create Account">
-                        <input type="button" value="Cancel" onclick="resetForm()">
-                    </div>
-                </form>
-            </div>
-        </section>
-
-        <section id="lab2" class="tab-content" style="display: none;">
-            <iframe src="lab2" style="width: 100%; height: 700px; margin-top: -45px;" frameborder="0"></iframe>
-        </section>
-
-        <section id="lab3" class="tab-content" style="display: none;">
-            <iframe src="lab3" style="width: 100%; height: 800px;" frameborder="0"></iframe>
-        </section>
-
-        <section id="lab4" class="tab-content" style="display: none;">
-            <iframe src="lab4" style="width: 100%; height: 1350px; background-color: #fff;" frameborder="0"></iframe>
-        </section>
-
-        <section id="lab5" class="tab-content" style="display: none;">
-            <iframe src="lab5" style="width: 100%; height: 825px; background-color: #fff;" frameborder="0"></iframe>
-        </section>
-
-        <section id="lab6" class="tab-content" style="display: none;">
-            <iframe src="lab6" style="width: 100%; height: 750px; background-color: #fff;" frameborder="0"></iframe>
-        </section>
-    </section>
+    <!-- Footer -->
     <footer>
         <div class="footer-container">
-            <div class="footer-group-info">
-                <h3>Website Information</h3>
+            <div class="footer-section">
+                <p>Website Information</p>
                 <p>This project is developed by ChauLe of the Human-Computer Interaction course.</p>
             </div>
-            
-            <div class="footer-newsletter">
-                <h3>Newsletter</h3>
-                <form class="form-newsletter" action="">
-                    <input type="email" placeholder="Your email address">
-                    <button type="submit">Send</button>
-                </form>
+            <div class="footer-section">
+                <label for="feedback">Send us your feedback:</label>
+                <div class="footer-bottom">
+                    <input type="text" id="feedback" placeholder="Type your feedback here...">
+                    <button>Send</button>
+                </div>
             </div>
         </div>
     </footer>
-
-    <script>
-        function showPage(pageId, element) {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-
-            if (pageId === 'home') {
-                document.getElementById(pageId).style.display = 'flex';
-            } else {
-                document.getElementById(pageId).style.display = 'block';
-            }
-
-            const navLinks = document.querySelectorAll('nav ul li a');
-            navLinks.forEach(navLink => {
-                navLink.classList.remove('active');
-            });
-
-            element.classList.add('active');
-
-            if (pageId === 'labs') {
-                document.querySelector(".tab-link").click();
-            }
-        }
-        
-        function openLab(evt, labName) {
-            var i, tabcontent, tablinks;
-    
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-                tabcontent[i].classList.remove("active");
-            }
-    
-            tablinks = document.getElementsByClassName("tab-link");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-    
-            document.getElementById(labName).style.display = "block";
-            document.getElementById(labName).classList.add("active");
-            evt.currentTarget.className += " active";
-        }
-    
-        function resetForm() {
-            document.querySelector("form").reset();
-            document.getElementById("profile-preview").style.display = "none";
-        }
-        
-        document.getElementById("profile-picture").addEventListener("input", function() {
-            var url = this.value;
-            if (url) {
-                document.getElementById("profile-preview").src = url;
-                document.getElementById("profile-preview").style.display = "block";
-            } else {
-                document.getElementById("profile-preview").style.display = "none";
-            }
-        });
-    </script>    
 </body>
 </html>
